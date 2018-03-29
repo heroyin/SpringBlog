@@ -74,6 +74,10 @@ public class ViewHelper {
         return title + " · " + appSetting.getSiteName();
     }
 
+    public String pictureUrl() {
+        return appSetting.getPictureUrl();
+    }
+
     public String getApplicationEnv() {
         return applicationEnv;
     }

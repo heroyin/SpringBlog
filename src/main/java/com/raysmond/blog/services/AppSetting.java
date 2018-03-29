@@ -14,6 +14,8 @@ public class AppSetting {
     public static final String SITE_NAME = "site_name";
     public static final String SITE_SLOGAN = "site_slogan";
     public static final String PAGE_SIZE = "page_size";
+    public static final String SITE_INTRO = "site_intro";
+    public static final String PICTURE_URL = "picture_url";
 
     @Autowired
     private SettingService settingService;
@@ -21,6 +23,8 @@ public class AppSetting {
     private String siteName = "SpringBlog";
     private String siteSlogan = "An interesting place to discover";
     private Integer pageSize = 5;
+    private String intro = "Introduce";
+    private String pictureUrl = "/images/user.jpg";
 
     public String getSiteName() {
         return (String) settingService.get(SITE_NAME, siteName);
@@ -47,5 +51,23 @@ public class AppSetting {
     public void setSiteSlogan(String siteSlogan) {
         this.siteSlogan = siteSlogan;
         settingService.put(SITE_SLOGAN, siteSlogan);
+    }
+
+    public String getIntro() {
+        return (String) settingService.get(SITE_INTRO, intro);
+    }
+
+    public void setIntro(String siteIntro) {
+        this.intro = siteIntro;
+        settingService.put(SITE_INTRO, siteIntro);
+    }
+
+    public String getPictureUrl() {
+        return (String) settingService.get(PICTURE_URL, pictureUrl);
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
+        settingService.put(PICTURE_URL, pictureUrl);
     }
 }
